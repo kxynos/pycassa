@@ -555,8 +555,7 @@ class SystemManager(object):
         matched = False
         for c in cfdef.column_metadata:
             if c.name == column:
-                c.index_type = None
-                c.index_name = None
+                cfdef.column_metadata.remove(c)
                 matched = True
                 break
 
